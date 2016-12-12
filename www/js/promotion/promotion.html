@@ -1,0 +1,60 @@
+<ion-view >    
+  <ion-content has-header="true" has-footer="true" direction="y" class="has-footer">
+    <div class="promotion-page"> 
+      <section vertical layout center>
+       <!--first card-->
+       <md-card cross-fade class="card">
+         <toaster-container toaster-options="{'toaster-id': 1, 'time-out': 8000, 'close-button':true,
+         'animation-class': 'toast-top-left'}"></toaster-container>
+         <toaster-container toaster-options="{'toaster-id': 2, 'time-out': 8000, 'close-button':true,
+         'animation-class': 'toast-top-left'}"></toaster-container>
+         <img src="{{vm.data.promotion.image}}" class="md-card-image">
+         <md-card-content>
+           <h2>{{vm.data.promotion.title}}</h2>
+           <p class="white-text" ng-bind-html="vm.data.promotion.description"></p>
+           <md-divider></md-divider>
+           <p style="font-size: 2rem;line-height: 1.25;">
+            De {{vm.data.promotion.price | currency:"R$":0 }}
+          </p>
+          <p style="font-size: 2rem;line-height: 1.25;">
+            Por {{vm.data.promotion.price_amount | currency:"R$":0 }}
+          </p>
+          <p style="font-size: 2rem;line-height: 1.25;">
+            Desconto de {{vm.data.promotion.descount }} %
+          </p>
+        </md-card-content>
+        <md-card-actions layout="column" layout-align="end center">
+          <md-button class="md-raised md-primary" ng-click="vm.modalShowConfirmBuy($event)" 
+          ng-disabled="vm.validation.points || vm.validation.coupons">Comprar</md-button>
+        </md-card-actions>
+      </md-card>
+    </section>
+
+    <div class="clear-both"></div>
+
+    <script type="text/ng-template" id="modalConfirmBuy.tmpl.html">
+      <md-dialog aria-label="Mango (Fruit)">
+        <md-toolbar>
+          <div class="md-toolbar-tools">
+            <h2>Confirmar compra</h2>
+            <span flex></span>
+            <md-button class="md-icon-button" ng-click="vm.cancel()">
+              <md-icon md-svg-src="img/icons/ic_highlight_off_black_24px.svg" aria-label="Close dialog"></md-icon>
+            </md-button>
+          </div>
+        </md-toolbar>
+        <md-dialog-content style="max-width:800px;max-height:810px; ">
+          <md-content class="md-padding">
+          <h3 class="title">Esta promoção custa {{vm.data.promotion.price_amount}} pontos. Podemos confirmar sua compra?</h3>
+            <md-button class="md-raised md-primary" type="button" ng-click="vm.confirmBuy()">Confirmar</md-button>
+          </form>
+        </md-content>
+      </md-dialog-content>
+
+    </md-dialog>
+  </script>
+
+</div>
+
+</ion-content>
+</ion-view>

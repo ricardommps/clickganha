@@ -1,0 +1,77 @@
+<ion-view>
+	<ion-nav-title>Configuraçoes</ion-nav-title>
+  <ion-content padding="true" class="has-header"> 
+  <ul class="list">
+
+    <li class="item item-toggle">
+       Habilitar notificações
+       <label class="toggle toggle-assertive">
+         <input type="checkbox" ng-model="vm.data.notifications" ng-checked="vm.data.notifications"
+          ng-init="vm.data.notifications = vm.data.notifications || false">
+         <div class="track">
+           <div class="handle"></div>
+         </div>
+       </label>
+    </li>
+
+    <li class="item" style="margin-left: 15px;margin-top: -19px;" ng-if="vm.data.notifications">
+
+     <div class="list">
+      <label class="item item-input item-select">
+        <div class="input">
+          Receber a cada: 
+        </div>
+        <select>
+          <option>Minuto</option>
+          <option selected>Hora</option>
+          <option>Dia</option>
+        <option>Mes</option>
+        </select>
+      </label>
+     
+    </div>
+      <!--
+       <div class="item item-icon-left" ion-datetime-picker time ng-model="vm.data.timernotifications">
+                <i class="icon ion-ios-clock positive"></i>
+                Tempo de recebimento:
+                <strong>{{vm.data.timernotifications| date: "H:mm"}}</strong>
+            </div>
+        -->
+    </li>
+
+    <li class="item item-toggle">
+       Ativar tela de bloqueio
+       <label class="toggle toggle-assertive">
+         <input type="checkbox" checked="true">
+         <div class="track">
+           <div class="handle"></div>
+         </div>
+       </label>
+    </li>
+
+    <li class="item item-toggle">
+       Teste 1
+       <label class="toggle toggle-assertive">
+         <input type="checkbox" checked="true">
+         <div class="track">
+           <div class="handle"></div>
+         </div>
+       </label>
+    </li>
+
+    <li class="item item-toggle">
+       Teste 2
+       <label class="toggle toggle-assertive">
+         <input type="checkbox">
+         <div class="track">
+           <div class="handle"></div>
+         </div>
+       </label>
+    </li>
+  </ul>
+            
+  </ion-content>
+
+</ion-view>
+
+

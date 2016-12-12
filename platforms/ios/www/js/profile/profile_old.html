@@ -1,0 +1,42 @@
+<ion-view view-title="Profile">
+  <ion-content>
+    <div class="bg_light_gray center">
+      <div class="col">
+        <i class="item item-avatar-center item-image">
+           <img ng-src="{{vm.data.userInfo.image}}" alt="">
+        </i>
+        <h4><strong>{{vm.data.userInfo.name.first}} {{vm.data.userInfo.name.last}}</strong></h4>
+        <p class="text-flow m-0">{{vm.data.userInfo.email}}</p>
+        <div class="col"></div>
+      </div>
+    </div>
+    <div class="player-info center">
+      <h2>Meus Cupons</h2>
+    </div>
+
+    <div class="card padding" ng-repeat="order in vm.data.orders" >
+        <div class="row">
+          <div class="my-box col-25">
+            <img ng-src="https://system.conektta.com.br/public/images/cupons/{{order.promotion.image}}" alt="">
+          </div>
+          <div class="my-box col-75">
+              <div class="my-box nome-hora col-70">
+                <small>{{order.promotion.title}}</small>
+              </div>
+              <div class="my-box-dir dir col-30">
+                <small class="verde">{{order.status.title}}</small>
+              </div>
+            <div class="row title-cup">
+              <h5></h5>
+            </div>
+            <div ng-if="order.coupon" class="row my-box col-100">
+              <h1>{{order.coupon.code}}</h1>
+            </div>
+          </div>     
+        </div>
+    </div>
+
+    <div ng-include src="'../../templates/footer.html'"></div>
+    
+  </ion-content>
+</ion-view>

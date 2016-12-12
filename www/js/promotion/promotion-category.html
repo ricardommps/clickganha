@@ -1,0 +1,32 @@
+<ion-view view-title="Promotions Category">
+  <ion-content>
+    <div style="overflow:auto;">
+      <div class="opacity-wrapper">      
+            <img ng-src="{{vm.data.banner.image.secure_url}}" alt="">
+            <div class="opacity-overlay   center">
+              <div class="box_v">
+                <h3 class="white-text" ng-bind-html="vm.data.banner.content"></h3>
+              </div>
+            </div>
+        </div>
+      <div ng-repeat="category in vm.data.promotionCategories" ui-sref="app.promotions({categoryId:category._id})" class="my-box boxes-cat" style="overflow:auto;">
+  
+        <img ng-src="https://app.conektta.com.br/images_app/{{category.image}}" alt="" ng-show="category.image">
+
+  <img src="https://app.conektta.com.br/images_app/default.jpg" alt="" ng-hide="category.image">
+          <div class="opacity-overlay center ui">
+          <div class="box_v">
+            <div class="texto">
+              <h6 class="branco">{{category.name}}</h6>
+            </div>
+          </div>
+        </div>     
+      </div>
+
+      <div class="clear-both"></div>
+    </div>
+    <div ng-include src="'../../templates/footer.html'"></div>
+    
+  </ion-content>
+  
+</ion-view>

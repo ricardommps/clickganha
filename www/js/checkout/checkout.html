@@ -1,0 +1,48 @@
+<ion-view view-title="Checkout">
+  <ion-content>
+
+    <div class="center">
+      <h4><strong>Checkout</strong></h4>
+    </div>
+    
+    <div class="row">
+      <div class="col">
+	{{vm.data.promotion.title}}
+	<small ng-bind-html="vm.data.promotion.description"></small>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col">
+	<h3>SubTotal</h3>
+      </div>
+      <div class="col-10">
+	{{ vm.data.promotion.price | currency:"R$":0 }}
+      </div>     
+    </div>
+    <div class="row">
+      <div class="col">
+	<h3>Desconto</h3>
+      </div>
+      <div class="col-10">
+	{{vm.data.promotion.descount  }} %
+      </div>
+    </div>      
+    <div class="row">
+      <div class="col">
+	<h3>Total</h3>
+      </div>
+      <div class="col-10">
+	{{vm.data.promotion.price_amount | currency:"R$":0  }}
+      </div>
+    </div>      
+
+    <div class="padding">
+      <button class="button button-positive button-block" ng-click="vm.pay()">
+	Finalizar Compra
+      </button>
+    </div>
+    
+  </ion-content>
+</ion-view>

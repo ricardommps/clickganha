@@ -1,0 +1,31 @@
+<ion-view view-title="Posts">
+  <ion-content>
+      <div style="overflow:auto;">
+        <div class="opacity-wrapper">
+          <img ng-src="{{vm.data.category.image.url}}" alt="">
+          <div class="opacity-overlay center">
+            <div class="box_v">
+              <h3 class="white-text">{{vm.data.category.name}}</h3>
+            </div>
+          </div>
+        </div>
+      	<div class="card padding cat-news" ng-repeat="post in vm.data.posts" ui-sref="app.post({postId:vm.data.post._id})">
+          <div class="row">
+            <div class="my-box col-25">
+              <img ng-src="{{post.image.url}}" alt="">
+               <small> <small class="verde">{{post.publishedDate  | date:'dd/MM/yyyy' }}</small></small>
+            </div>
+            <div class="my-box col-75">
+              <div class="my-box nome-hora col-70">
+              <p><strong>{{post.title}}</strong></p>
+              </div>
+              <div class="row my-box col-100">
+                <span ng-bind-html="post.content.brief"></span>
+              </div>
+            </div>
+          </div>
+      	</div>
+      <div class="clear-both"></div>
+    <div ng-include src="'../../templates/footer.html'"></div>
+  </ion-content>
+</ion-view>

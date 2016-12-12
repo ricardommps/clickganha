@@ -1,0 +1,48 @@
+<ion-view> 
+  <ion-content has-header="true" has-footer="true" direction="y" class="has-footer">
+    <section>
+      <div layout="row" layout-align="center center" style=" margin-top: 15px;">
+        <h1>Bem vindo</h1>
+      </div>
+    </section>
+
+    <div class="col-md-4">
+      <div class="tile-box tile-box-alt bg-green">
+        <div class="tile-header">
+          <span style="font-size: 30px;">Seus Pontos</span>
+        </div>
+        <div class="tile-content-wrapper">
+          <div class="tile-content">
+            <i class="material-icons">monetization_on</i> {{vm.totalPoints}}
+          </div>
+        </div>
+        <a href="" title="" class="tile-footer"  ui-sref="app.promotions">Ganhe mais pontos
+          <i class="glyph-icon icon-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+
+     <section>
+      <div layout="row" layout-align="center center">
+        <h3>Promoçoes</h3>
+      </div>
+
+      <md-content>
+      <md-list class="listdemoListControls">
+        <md-list-item class="md-2-line" ng-repeat="promotions in vm.data.promotions | limitTo:4"
+            ui-sref="app.promotion({promotionId: promotions._id})">
+          <img ng-src="{{promotions.image}}" class="md-avatar">
+          <div class="md-list-item-text">
+              <h3 style="margin-top: 20px;"">{{promotions.title}}</h3>
+              <p ng-bind-html="promotions.description | limitTo:120"></p>
+          </div>
+          <span class="badge badge-assertive md-secondary">-{{promotions.price_amount}}</span>
+        </md-list-item>
+      </md-list>
+    </md-content>
+
+    </section>
+
+    
+  </ion-content>
+</ion-view>

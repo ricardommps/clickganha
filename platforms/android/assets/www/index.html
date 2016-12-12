@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-eval' 'unsafe-inline';">
+    <title>Conektta</title>
+
+    <link rel="manifest" href="manifest.json">
+
+    <link href='https://fonts.googleapis.com/css?family=RobotoDraft:400,500,700,400italic' rel='stylesheet' type='text/css'>
+    <link href="assets/css/angular-material.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="lib/ion-md-input/css/ion-md-input.min.css" rel="stylesheet">
+    <link href="lib/ion-datetime-picker/release/ion-datetime-picker.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!--HOME CSS-->
+    <link href="css/homeCss/border-radius.css" rel="stylesheet">
+    <link href="css/homeCss/colors.css" rel="stylesheet">
+    <link href="css/homeCss/elements-all.css" rel="stylesheet">
+    <link href="css/homeCss/helpers-all.css" rel="stylesheet">
+
+
+
+    <link href="css/slider.css" rel="stylesheet">
+    <link href="css/rbs.css" rel="stylesheet">
+    <link href="css/login.css" rel="stylesheet">
+
+    <link href="assets/css/style.css" rel="stylesheet">
+    
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <script src="lib/ion-md-input/js/ion-md-input.min.js"></script>
+    <script src="lib/ng-cordova/dist/ng-cordova.js"></script>
+    <script src="https://maps.google.com/maps/api/js"></script>
+    <script src="lib/ngmap/build/scripts/ng-map.min.js"></script>
+    <script type="text/javascript" src="lib/ng-combo-date-picker/ngComboDatePicker.min.js"></script>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+
+    <script src="lib/ion-datetime-picker/release/ion-datetime-picker.min.js"></script>
+
+    <script src="lib/moment/moment.js"></script>
+    <script src="lib/moment-timezone/moment-timezone.js"></script>
+    <script src="lib/moment-timezone/moment-timezone-utils.js"></script>
+
+    <script src="lib/ng-file-upload/dist/ng-file-upload.min.js"></script>
+    <script src="lib/ng-file-upload/dist/ng-file-upload-shim.min.js"></script>
+
+    <script src="js/menu/router.js"></script>
+    <script src="js/menu/controllers.js"></script>
+
+    <script src="js/about/controllers.js"></script>
+    <script src="js/about/router.js"></script>
+    <script src="js/about/service.js"></script>
+
+    <script src="js/home/controllers.js"></script>
+    <script src="js/home/router.js"></script>
+    <script src="js/home/service.js"></script>
+
+    <script src="js/campanhas/controllers.js"></script>
+    <script src="js/campanhas/router.js"></script>
+    <script src="js/campanhas/service.js"></script>
+
+    <script src="js/anuncio/controllers.js"></script>
+    <script src="js/anuncio/router.js"></script>
+
+    <script src="js/cupons/controllers.js"></script>
+    <script src="js/cupons/router.js"></script>
+    <script src="js/cupons/service.js"></script>
+
+    <script src="js/secure/controllers.js"></script>
+    <script src="js/secure/router.js"></script>
+
+    <script src="js/login/controllers.js"></script>
+    <script src="js/login/router.js"></script>
+    <script src="js/login/service.js"></script>
+
+    <script src="js/faq/controllers.js"></script>
+    <script src="js/faq/router.js"></script>
+    <script src="js/faq/service.js"></script>
+
+    <script src="js/posts/controllers.js"></script>
+    <script src="js/posts/router.js"></script>
+    <script src="js/posts/service.js"></script>
+
+    <script src="js/post/controllers.js"></script>
+    <script src="js/post/router.js"></script>
+    <script src="js/post/service.js"></script>
+
+    <script src="js/post/controllers.js"></script>
+    <script src="js/post/router.js"></script>
+    <script src="js/post/service.js"></script>
+
+    <script src="js/rbs/controllers.js"></script>
+    <script src="js/rbs/router.js"></script>
+    <script src="js/rbs/service.js"></script>
+
+    <script src="js/profile/controllers.js"></script>
+    <script src="js/profile/router.js"></script>
+    <script src="js/profile/service.js"></script>
+
+    <script src="js/promotions/controllers.js"></script>
+    <script src="js/promotions/router.js"></script>
+    <script src="js/promotions/service.js"></script>
+
+    <script src="js/promotion/controllers.js"></script>
+    <script src="js/promotion/router.js"></script>
+    <script src="js/promotion/service.js"></script>
+
+    <script src="js/configuracoes/controllers.js"></script>
+    <script src="js/configuracoes/router.js"></script>
+    <script src="js/configuracoes/service.js"></script>
+
+    <script src="js/checkout/controllers.js"></script>
+    <script src="js/checkout/router.js"></script>
+    <script src="js/checkout/service.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-messages/1.5.8/angular-messages.js"></script>
+
+    <script src="js/services.js"></script>
+    <script src="js/constants.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/ng-cordova.min.js"></script> 
+    <script src="cordova.js"></script>
+
+  </head>
+
+  <body ng-app="starter" ng-controller="balanceOfPoints" class="platform-android platform-cordova platform-webview">
+    <ion-nav-view></ion-nav-view>
+  </body>
+</html>

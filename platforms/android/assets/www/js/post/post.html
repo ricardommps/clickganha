@@ -1,0 +1,21 @@
+<ion-view view-title="Cupom">
+  <ion-content>
+    <div class="opacity-wrapper">      
+        <img ng-src="{{vm.data.post.image.url}}" alt="">
+        <div class="opacity-overlay   center">
+          <div class="titulo-ban">
+          <p class="logo-titulo-polst"></p>
+            <h3 class="white-text">{{vm.data.post.title}}</h3>
+            <h6 class="white-text">{{vm.data.post.description}}</h6>
+          </div>
+        </div>
+    </div>
+    <div class="center card">
+      <div class="line"></div>
+      <p class="text-flow m-0">
+        <span ng-bind-html="vm.data.post.content.extended"></span>
+      </p>
+    </div>  
+    <div class="clear-both"></div>
+  </ion-content>
+</ion-view>
