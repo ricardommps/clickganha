@@ -3,7 +3,7 @@
 	'use strict';
 	angular.module('api.profile.controllers', [])
 	.controller('ProfileCtrl', controller);
-	function controller($scope, ProfileService, $window, $state, LOCALSTORAGE){
+	function controller($scope, ProfileService, $window, $state, LOCALSTORAGE, $rootScope){
 		var user = JSON.parse(localStorage.getItem(LOCALSTORAGE.key));
 	    if(!user){
 	      $state.go('login');
@@ -13,6 +13,7 @@
 		vm.data = {};
 
 		vm.user = user;
+		$rootScope.$broadcast('title', {title : "Perfil"});
 
 		userProfiles();
 

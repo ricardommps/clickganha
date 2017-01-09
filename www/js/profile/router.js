@@ -7,6 +7,7 @@
     $stateProvider
     .state('app.profile', {
       url: '/profile',
+      cache: false,
       views: {
         'menuContent': {
           templateUrl: 'js/profile/profile.html',

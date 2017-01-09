@@ -1,5 +1,19 @@
 
 @font-face {
+    font-family: 'Roboto-Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Roboto-Regular'), url('../font/Roboto-Regular.ttf');
+   src: local('Roboto-Regular'), url('../font/Roboto-Regular.ttf?#iefix'), format('truetype');
+}
+@font-face {
+    font-family: 'Roboto-Medium';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Roboto-Medium'), url('../font/Roboto-Medium.ttf');
+   src: local('Roboto-Medium'), url('../font/Roboto-Medium.ttf?#iefix'), format('truetype');
+}
+@font-face {
     font-family: 'Conektta-light';
     font-style: normal;
     font-weight: normal;
@@ -36,7 +50,7 @@ body {
   font-size: 1.5em;
   line-height: 1.6;
   font-weight: 400;
-  font-family: 'Conektta-light';
+  font-family: 'Roboto-Regular';
   color: #222; 
   margin: 0;
   overflow-x: hidden;
@@ -47,19 +61,21 @@ body {
     text-transform: capitalize;
 }
 h1, h2, h3, h4, .h1, .h2, .h3, .h4 {
-    font-family: 'Conektta-light';  
+    font-family: 'Roboto-Regular';  
     margin-top: 0;
     margin-bottom: 2rem;
     font-weight: 300; 
     color: #1c212a;
 }
+/*
 h5, h6, p, label, .h5, .h6 {
-    font-family: 'ConekttaSegoe-light';
+    font-family: 'Roboto-Regular';
       margin-top: 0;
       margin-bottom: 2rem;
       font-weight: 300; 
       color: #1c212a;
 }
+*/
 .logo-banner {
  background-image: url('../img/logo-conektta.svg');
 background-repeat: no-repeat;
@@ -1262,6 +1278,7 @@ textarea.materialize-textarea {
     outline: 0;
     background: transparent;
     border-bottom: 2px solid rgba(250, 250, 250, 0.45);
+    color: white;
 }
 input[type=text].rounded, 
 input[type=password].rounded, 
@@ -2266,3 +2283,8 @@ ul.faq {
   margin-bottom: 1px!important;
 }
 
+.sub-title{
+  font-family: 'Roboto-Medium'; 
+  font-size: 14px;
+  color: #1B5E20;
+}

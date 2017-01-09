@@ -7,6 +7,7 @@
     $stateProvider
     .state('app.rbs', {
       url: '/rbs',
+      cache: false,
       views: {
         'menuContent': {
           templateUrl: 'js/rbs/rbs.html',

@@ -22,6 +22,7 @@
 		vm.modal = {};
 		vm.totalPoints = $rootScope.totalPoints;
 		var cupom = {};
+		$rootScope.$broadcast('title', {title : "Detalhes da promoção"});
 
 		function validationBuy(){
 

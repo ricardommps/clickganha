@@ -12,7 +12,8 @@
            listAllAdvertisings  : listAllAdvertisings,
            listUserAdvertisings : listUserAdvertisings,
            userAdvertisings     : userAdvertisings,
-           advertisingFilter    : advertisingFilter
+           advertisingFilter    : advertisingFilter,
+           detailAdvertisings   : detailAdvertisings
          };
          return vm.service;
 
@@ -20,6 +21,19 @@
          function listAllAdvertisings() {
           var def = $q.defer();
           $http.get(API_URL.url + '/advertisings')
+          .then(function(res){
+            def.resolve(res);
+
+          },function(data) {
+           def.reject("Failed List All Advertisings");
+         })
+          
+          return def.promise;
+        }
+
+        function detailAdvertisings(_id) {
+          var def = $q.defer();
+          $http.get(API_URL.url + '/advertisings/'+_id)
           .then(function(res){
             def.resolve(res);
 

@@ -1,20 +1,23 @@
 <ion-view>
-	
   <ion-content has-header="true" has-footer="true" direction="y" class="has-footer">
-    <img ng-src="{{vm.advertising.image}}" width='100%' height='100%' class="fullscreen-image" ng-show='vm.advertising.image.length > 0'/>
-    <div ng-show='vm.videoSource'>
-    	
-    	<section class="ng-video-container">
-        <section class="video ng-pristine ng-untouched ng-valid ng-isolate-scope" ng-video="" ng-model="interface"><video autoplay="" ng-src="{{vm.videoSource}}"></video>
-        
-    	</section>
-    	</section>
+    <h4 class="sub-title">Detalhe do Anuncio</h4>
+    <div class="promotion-page"> 
 
+        <section vertical layout center>
+           <!--first card-->
+           <md-card cross-fade class="card">
+             <toaster-container toaster-options="{'toaster-id': 1, 'time-out': 8000, 'close-button':true,
+             'animation-class': 'toast-top-left'}"></toaster-container>
+             <toaster-container toaster-options="{'toaster-id': 2, 'time-out': 8000, 'close-button':true,
+             'animation-class': 'toast-top-left'}"></toaster-container>
+             <img src="{{vm.data.image}}" class="md-card-image">
+             <md-card-content>
+               <h2>{{vm.data.title}}</h2>
+               <p class="white-text" ng-bind-html="vm.data.content"></p>
+            </md-card-content>
+          </md-card>
+        </section>
 
     </div>
-    
-
   </ion-content>
 </ion-view>
-
-

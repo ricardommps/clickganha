@@ -3,10 +3,11 @@
 	'use strict';
 	angular.module('api.promotions.controllers', [])
 	.controller('PromotionsCtrl', controller);
-	function controller($scope, PromotionsService, CuponsService){
+	function controller($scope, PromotionsService, CuponsService, $rootScope){
 		var vm = this;
 		vm.data ={};
 		vm.openPromotion = openPromotion;
+		$rootScope.$broadcast('title', {title : "Promoção"});
 		listAllPromotions();
 
 		function listAllPromotions(){

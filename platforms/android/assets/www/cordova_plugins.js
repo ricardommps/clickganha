@@ -9,6 +9,15 @@ module.exports = [
         ]
     },
     {
+        "id": "cordova-plugin-inappbrowser.inappbrowser",
+        "file": "plugins/cordova-plugin-inappbrowser/www/inappbrowser.js",
+        "pluginId": "cordova-plugin-inappbrowser",
+        "clobbers": [
+            "cordova.InAppBrowser.open",
+            "window.open"
+        ]
+    },
+    {
         "id": "cordova-plugin-splashscreen.SplashScreen",
         "file": "plugins/cordova-plugin-splashscreen/www/splashscreen.js",
         "pluginId": "cordova-plugin-splashscreen",
@@ -59,15 +68,6 @@ module.exports = [
             "cordova.plugins.Keyboard"
         ],
         "runs": true
-    },
-    {
-        "id": "cordova-plugin-inappbrowser.inappbrowser",
-        "file": "plugins/cordova-plugin-inappbrowser/www/inappbrowser.js",
-        "pluginId": "cordova-plugin-inappbrowser",
-        "clobbers": [
-            "cordova.InAppBrowser.open",
-            "window.open"
-        ]
     }
 ];
 module.exports.metadata = 
@@ -76,12 +76,12 @@ module.exports.metadata =
     "cordova-plugin-app-event": "1.2.0",
     "cordova-plugin-console": "1.0.4",
     "cordova-plugin-device": "1.1.3",
+    "cordova-plugin-inappbrowser": "1.5.0",
     "cordova-plugin-splashscreen": "4.0.0",
     "cordova-plugin-statusbar": "2.2.0",
     "cordova-plugin-whitelist": "1.3.0",
     "de.appplant.cordova.plugin.local-notification": "0.8.4",
-    "ionic-plugin-keyboard": "2.2.1",
-    "cordova-plugin-inappbrowser": "1.5.0"
+    "ionic-plugin-keyboard": "2.2.1"
 };
 // BOTTOM OF METADATA
 });

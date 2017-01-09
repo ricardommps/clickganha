@@ -3,11 +3,12 @@
 	'use strict';
 	angular.module('api.rbs.controllers', [])
 	.controller('RBSCtrl', controller);
-	function controller($scope, RBSService, $cordovaGeolocation,CampanhasService){
+	function controller($scope, RBSService, $cordovaGeolocation,CampanhasService, $rootScope){
 		var vm = this;
 		vm.data ={};
 
 		var filter ={"title":"wifi"};
+		$rootScope.$broadcast('title', {title : "Wifi"});
 		listAllRBS();
 
 		function listAllRBS(){

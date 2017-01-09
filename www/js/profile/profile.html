@@ -1,11 +1,12 @@
 <ion-view view-title="Profile">
   <ion-content has-header="true" has-footer="true" direction="y" class="has-footer">
+    <h4 class="sub-title">Perfil</h4>
       <section vertical layout center>
        <!--first card-->
        <md-card cross-fade class="card">
        <center>
          <img src="{{vm.user.image}}" class="md-card" ng-if="vm.user.image">
-          <img src="img/click-avatar.png" class="md-card" ng-if="!vm.user.image">
+          <img src="/img/click-avatar.png" class="md-card" ng-if="!vm.user.image">
         </center>
          <md-card-content>
            <md-item-content layout-align="start start">

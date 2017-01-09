@@ -19,6 +19,7 @@
 		vm.toggleLeft = buildToggler('left');
 		vm.onClickMenu = onClickMenu;
 		vm.user = user;
+		vm.title = "Home";
 
 
 		vm.menu = [
@@ -73,6 +74,13 @@
 		$scope.$on("updateTotalPoints",function () {
 			vm.totalPoints = $rootScope.totalPoints; 
 		});
+
+		$scope.$on("title",function (event, obj) {
+	    	console.log(obj);
+	    	vm.title = obj.title;
+	    	console.log(vm.title);
+	    	//listUserAdvertisings();  
+	  	});
 
 		function buildToggler(componentId) {
 			return function() {

@@ -16,6 +16,8 @@
     vm.openAdvertising = openAdvertising;
     vm.totalPoints = $rootScope.totalPoints
 
+    $rootScope.$broadcast('title', {title : "Campanhas"});
+
     listAllAdvertisings();
 
     $scope.$on("updateTotalPoints",function () {

@@ -22,9 +22,24 @@
       createdAt   : new Date() 
 
     };
-
+    detailAdvertisings();
+    $rootScope.$broadcast('title', {title : "Detalhe do Anuncio"});
     userAdvertisings();
 
+    function detailAdvertisings(){
+      CampanhasService.detailAdvertisings(vm.advertising._id)
+        .then(function(res) {
+          if(res.status == "200"){
+            vm.data = res.data.advertising;
+            console.log(res);
+          }
+          
+        },function(data) {
+          console.log("ERROR");
+        //modal();
+        })
+      
+    }
     function userAdvertisings(){
       CampanhasService.userAdvertisings(vm.userAdvertisings)
       .then(function(res) {

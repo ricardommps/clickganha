@@ -13,6 +13,7 @@
 		vm.login = login;
 		vm.resetPassword = resetPassword;
 		vm.modalShowResetPassword = modalShowResetPassword;
+		vm.modalShowTermos = modalShowTermos;
 		vm.cancel = cancel;
 		vm.data.loginForm=true;
 		vm.searchText ="";
@@ -58,13 +59,29 @@
 
 		}
 
+		function modalShowTermos(ev){
+			$mdDialog.show({
+				templateUrl: 'termos.tmpl.html',
+				controller: LoginCtrl,
+				controllerAs: 'vm',
+				parent: angular.element(document.body),
+				targetEvent: ev,
+				clickOutsideToClose:true
+			})
+			.then(function(answer) {
+				$scope.status = 'You said the information was "' + answer + '".';
+			}, function() {
+				$scope.status = 'You cancelled the dialog.';
+			});
+
+		}
+
 		function cancel () {
 			console.log("cancel");
 			$mdDialog.cancel();
 		};
 
 		function resetPassword(){
-
 			LoginsService.resetPassword(vm.data)
 			.then(function(res) {
 				console.log(res);
@@ -76,7 +93,6 @@
 				else{
 					$scope.message_modal="Siga instruções enviadas para seu e-mail";
 				}	
-
 			},function(data) {
 				console.log(data);
 				$scope.modal.login_fail.show();
@@ -88,7 +104,6 @@
 		function login(server){
 			loading();
 			var internalToken = Math.floor((Math.random() * 9999));
-
 			LoginsService.login(server,internalToken)
 			.then(function(res) {
 				console.log(res);
@@ -98,7 +113,6 @@
 				}catch(err){
 					$ionicLoading.hide();
 				}
-				
 				//var w = window.open($sce.trustAsResourceUrl(res.data.uri), '_system', 'location=no');
 				var w = window.open($sce.trustAsResourceUrl(res.data.uri), '_blank', 'location=no');
 				//var w = window.open('http://www.twitter.com/nraboy','_blank', 'location=yes');
@@ -116,11 +130,10 @@
 				$scope.modal.login_fail.show();
 				$scope.message_modal="Não foi possivel realizar o login.";
 				$ionicLoading.hide();
-				w.close();
+				 w.close();
 			})
 			
 		}
-
 		function getToken(internalToken,window_login){
 			console.log("getToken")
 			console.log(window_login);
@@ -138,7 +151,6 @@
 				getToken(internalToken,window_login);
 			})
 		}
-
 
 		function signin(form){
 			loading();
@@ -168,27 +180,27 @@
 		function signup(form){
 			console.log(vm.data);
 			loading();
-			LoginsService.signup(vm.data)
-			.then(function(res) {
-				console.log(res);
-				try{
-					var userInfo = res.user;
-					$window.localStorage.setItem('userInfo', JSON.stringify(userInfo));
-				//$window.localStorage.setItem('userInfo', JSON.stringify(userInfo));
-				vm.data.userInfo = JSON.parse($window.localStorage.getItem('userInfo'));
-				$state.go('app.home');
-				$ionicLoading.hide();
-			}catch(err){
+				LoginsService.signup(vm.data)
+				.then(function(res) {
+					console.log(res);
+					try{
+						var userInfo = res.user;
+						$window.localStorage.setItem('userInfo', JSON.stringify(userInfo));
+					//$window.localStorage.setItem('userInfo', JSON.stringify(userInfo));
+					vm.data.userInfo = JSON.parse($window.localStorage.getItem('userInfo'));
+					$state.go('app.home');
+					$ionicLoading.hide();
+				}catch(err){
+					$scope.modal.login_fail.show();
+					$scope.message_modal="Não foi possivel realizar o login.";
+					$ionicLoading.hide();
+				}	
+
+			},function(data) {
 				$scope.modal.login_fail.show();
 				$scope.message_modal="Não foi possivel realizar o login.";
 				$ionicLoading.hide();
-			}	
-
-		},function(data) {
-			$scope.modal.login_fail.show();
-			$scope.message_modal="Não foi possivel realizar o login.";
-			$ionicLoading.hide();
-		})
+			})
 		}
 
 		function loading(){

@@ -15,6 +15,8 @@
 
     var vm = this;
     vm.data = {};
+    $rootScope.$broadcast('title', {title : "Quem Somos"});
+
     
     function userAdvertisings(){
       AboutService.about()

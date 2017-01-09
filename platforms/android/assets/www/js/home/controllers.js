@@ -18,6 +18,7 @@
 		var vm = this;
 		vm.data = {};
 		vm.totalPoints = $rootScope.totalPoints;
+		$rootScope.$broadcast('title', {title : "Home"});
 
 
 		$scope.$on("updateTotalPoints",function () {

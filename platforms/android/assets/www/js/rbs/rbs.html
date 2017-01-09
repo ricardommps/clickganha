@@ -1,7 +1,7 @@
 <ion-view view-title="Pontos de acesso">
   
   <ion-content has-header="true" has-footer="true" direction="y" class="has-footer">
-
+  <h4 class="sub-title">Wifi</h4>
   <ng-map center="-27.417845, -48.404159" zoom="15" mayTypeId="TERRAIN" class="map">
     <shape name="circle" ng-repeat="city in vm.data" no-watcher="true"
       stroke-color="{{city.circle.strokeColor.length !=0 ? city.circle.strokeColor : '#1B5E20'}}"

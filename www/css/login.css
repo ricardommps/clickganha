@@ -1,31 +1,9 @@
-.login-page {
-  width: 360px;
-  margin: auto;
+.group { 
+  position: relative; 
+  margin-bottom: 45px;
+  padding: 15%; 
 }
-.form {
-  position: relative;
-  z-index: 1;
-  max-width: 360px;
-  margin: 0 auto 100px;
-  padding: 45px;
-  text-align: center;
-}
-.form input {
-  font-size: 18px;
-  padding: 10px 10px 10px 5px;
-  -webkit-appearance: none;
-  display: block;
-  background: #fafafa;
-  color: #636363;
-  width: 100%;
-  border: none;
-  border-radius: 0;
-  border-bottom: 1px solid #757575;
-}
-.form input:focus { 
-  outline: none;
-  color: #636363; 
-}
+
 
 .form select {
   font-family: "Roboto", sans-serif;

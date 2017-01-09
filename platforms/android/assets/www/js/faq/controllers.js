@@ -3,12 +3,13 @@
 	'use strict';
 	angular.module('api.faq.controllers', [])
 	.controller('FaqCtrl', controller);
-	function controller($scope, FaqService){
+	function controller($scope, FaqService, $rootScope){
 		var vm = this;
 		vm.data ={};
 		vm.shownFaq;
 		vm.toggleFaq = toggleFaq;
 		vm.isFaqShown = isFaqShown;
+		$rootScope.$broadcast('title', {title : "FAQ"});
 
 		$scope.accordianData = [  
                                 { "heading" : "About Us",         "content" : "Testestetetetetete" },

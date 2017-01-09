@@ -15,8 +15,13 @@ h1 {
 }
 
 p {
-  color: #555;
+  color: black;
   margin: 0 0 25px;
+}
+
+.p-login{
+  color: rgba(250, 250, 250, 0.58) !important;
+
 }
 
 .scroll {
@@ -292,7 +297,7 @@ md-sidenav {
   }
 
   .promotion-page{
-    padding: 45px 0px 45px 0px
+    
   }
 
 
@@ -378,4 +383,14 @@ md-sidenav {
     margin-top: 20px;
     border-top: 1px solid #B2B2B2;
   }
+}
+
+md-input-container {
+    width: 100%;
+}
+
+.md-button-login{
+  width: 100% !important;
+  background-color: rgb(250,250,250) !important;
+  color: rgb(76,175,80) !important;
 }

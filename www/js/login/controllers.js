@@ -13,6 +13,7 @@
 		vm.login = login;
 		vm.resetPassword = resetPassword;
 		vm.modalShowResetPassword = modalShowResetPassword;
+		vm.modalShowTermos = modalShowTermos;
 		vm.cancel = cancel;
 		vm.data.loginForm=true;
 		vm.searchText ="";
@@ -44,6 +45,23 @@
 		function modalShowResetPassword(ev){
 			$mdDialog.show({
 				templateUrl: 'recoverPassword.tmpl.html',
+				controller: LoginCtrl,
+				controllerAs: 'vm',
+				parent: angular.element(document.body),
+				targetEvent: ev,
+				clickOutsideToClose:true
+			})
+			.then(function(answer) {
+				$scope.status = 'You said the information was "' + answer + '".';
+			}, function() {
+				$scope.status = 'You cancelled the dialog.';
+			});
+
+		}
+
+		function modalShowTermos(ev){
+			$mdDialog.show({
+				templateUrl: 'termos.tmpl.html',
 				controller: LoginCtrl,
 				controllerAs: 'vm',
 				parent: angular.element(document.body),
